@@ -1,0 +1,48 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect base URL to home page
+RewriteRule ^$ index.php?p=home [L]
+
+# Redirect valid pages
+RewriteRule ^(home|login|register|about|produk)$ index.php?p=$1 [L]
+
+# Rewrite produk_detail/50 to produk_detail.php?product_id=50
+RewriteRule ^produk_detail/([^/]+)/?$ produk_detail.php?id_produk=$1 [L]
+
+# Handle invalid pages
+RewriteCond %{QUERY_STRING} p=(?!home|login|register|about|produk)
+RewriteRule ^index\.php$ index.php?p=404 [L]
+
+# Handle 404
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?p=404 [L]
+
+# Disable directory listing
+Options -Indexes
+
+# Prevent viewing of htaccess
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Protect important files
+<FilesMatch "(wp-config\.php|php\.ini|php\.htaccess|\.git)">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Enable FollowSymLinks and deny access to .htaccess
+Options +FollowSymLinks
+<Files ~ "^\.ht">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</Files>
+
+# Protect against common PHP vulnerabilities
+php_flag display_errors off
+php_flag expose_php off
+php_flag session.use_only_cookies on

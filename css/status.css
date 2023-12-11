@@ -1,0 +1,71 @@
+.hidden-section {
+    display: none;
+}
+.list-item {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column; /* Perubahan untuk mengatur konten menjadi vertikal */
+    align-items: flex-start; /* Perubahan untuk mengatur konten kiri */
+}
+
+.status-line {
+    width: 100%;
+    height: 3px; /* Tinggi garis */
+    background-color: #ccc; /* Warna garis default */
+    margin-bottom: 0; 
+}
+
+.status-dot-mkonfirmasi{
+    width: 10px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: red; /* Warna bulat biru */
+    margin-left: 0; /* Memindahkan bulat ke kanan */
+    
+}
+.status-dot-dikemas{
+    width: 15px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: cyan; /* Warna bulat biru */
+    margin-left: 30%; /* Memindahkan bulat ke kanan */
+}
+
+.status-dot-dikirim{
+    width: 15px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: orange; /* Warna bulat biru */
+    margin-left: 50%; /* Memindahkan bulat ke kanan */
+}
+
+.status-dot-jalan{
+    width: 10px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: black; /* Warna bulat biru */
+    margin-left: 80%; /* Memindahkan bulat ke kanan */
+}
+.status-dot-diterima{
+    width: 10px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: blue; /* Warna bulat biru */
+    margin-left: auto; /* Memindahkan bulat ke kanan */
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-3 {
+    margin-bottom: 15px;
+}
+
+h4 {
+    margin: 0;
+}

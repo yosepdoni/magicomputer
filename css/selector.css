@@ -1,0 +1,80 @@
+:root {
+    --primary-dark-color: #F3283C;
+    --primary-light-color: #FF6978;
+    --success-dark-color: #32A071;
+    --sucess-light-color: #06E775;
+    --alert-light-color: #a42a23;
+    --alert-dark-color: #7a1f1a;
+    --secondary-dark-color: #666666;
+    --secondary-light-color: #A6A6A6;
+    --gold-dark-color: #FFA500;
+    --gold-light-color: #FFBD00;
+    --default-dark-color: #1E2C31;
+    --default-light-color: #E5E5E5;
+}
+
+.fx-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.fx-colum {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.fx-colum.nowrap,
+.fx-row.nowrap {
+    flex-wrap: nowrap;
+}
+
+.fx-row.fx-fill>*,
+.fx-colum.fx-fill>* {
+    flex-grow: 1;
+}
+
+.spin-input {
+    border: 1px solid var(--secondary-light-color);
+}
+
+.spin-input>div:first-child {
+    cursor: pointer;
+    border-right: 1px solid var(--secondary-light-color);
+}
+
+.spin-input>div:first-child:active {
+    transform: translate3d(1px, 0px, 1px)
+}
+
+.spin-input>div:last-child {
+    flex: none;
+    border-left: 1px solid var(--secondary-light-color);
+    cursor: pointer;
+}
+
+.spin-input>div:last-child:active {
+    transform: translate3d(1px, 0px, 1px)
+}
+
+.icon {
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+    font-size: 10px;
+}
+
+.icon.primary,
+.icon.primary .ci {
+    color: var(--primary-dark-color);
+}
+
+.icon.reactive:hover .ci {
+    color: var(--primary-light-color);
+}
+
+.hidden {
+    display: none;
+}
