@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Des 2023 pada 22.08
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.0.30
+-- Generation Time: Dec 11, 2023 at 02:13 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `keranjang`
+-- Table structure for table `keranjang`
 --
 
 CREATE TABLE `keranjang` (
@@ -40,7 +40,7 @@ CREATE TABLE `keranjang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `keranjang`
+-- Dumping data for table `keranjang`
 --
 
 INSERT INTO `keranjang` (`id_keranjang`, `id_pengguna`, `id_produk`, `nama_produk`, `kategori`, `jumlah`, `harga`, `total`, `gambar`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `keranjang` (`id_keranjang`, `id_pengguna`, `id_produk`, `nama_produ
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengguna`
+-- Table structure for table `pengguna`
 --
 
 CREATE TABLE `pengguna` (
@@ -63,7 +63,7 @@ CREATE TABLE `pengguna` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pengguna`
+-- Dumping data for table `pengguna`
 --
 
 INSERT INTO `pengguna` (`id_pengguna`, `surel`, `sandi`, `nama`, `telepon`, `alamat`, `peran`) VALUES
@@ -79,7 +79,7 @@ INSERT INTO `pengguna` (`id_pengguna`, `surel`, `sandi`, `nama`, `telepon`, `ala
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penilaian`
+-- Table structure for table `penilaian`
 --
 
 CREATE TABLE `penilaian` (
@@ -91,7 +91,7 @@ CREATE TABLE `penilaian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `penilaian`
+-- Dumping data for table `penilaian`
 --
 
 INSERT INTO `penilaian` (`id_penilaian`, `id_pengguna`, `id_produk`, `penilaian`, `keterangan`) VALUES
@@ -100,7 +100,7 @@ INSERT INTO `penilaian` (`id_penilaian`, `id_pengguna`, `id_produk`, `penilaian`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pesanan`
+-- Table structure for table `pesanan`
 --
 
 CREATE TABLE `pesanan` (
@@ -118,7 +118,7 @@ CREATE TABLE `pesanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pesanan`
+-- Dumping data for table `pesanan`
 --
 
 INSERT INTO `pesanan` (`id_pesanan`, `id_pengguna`, `id_produk`, `no_resi`, `daftar_pesanan`, `pembayaran`, `bukti_bayar`, `tanggal`, `ekspedisi`, `alamat`, `status_kirim`) VALUES
@@ -134,7 +134,7 @@ INSERT INTO `pesanan` (`id_pesanan`, `id_pengguna`, `id_produk`, `no_resi`, `daf
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk`
+-- Table structure for table `produk`
 --
 
 CREATE TABLE `produk` (
@@ -149,7 +149,7 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `produk`
+-- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `stok`, `terjual`, `kategori`, `deskripsi`, `harga`, `gambar`) VALUES
@@ -169,7 +169,7 @@ INSERT INTO `produk` (`id_produk`, `nama_produk`, `stok`, `terjual`, `kategori`,
 --
 
 --
--- Indeks untuk tabel `keranjang`
+-- Indexes for table `keranjang`
 --
 ALTER TABLE `keranjang`
   ADD PRIMARY KEY (`id_keranjang`),
@@ -177,13 +177,13 @@ ALTER TABLE `keranjang`
   ADD KEY `id_pengguna` (`id_pengguna`);
 
 --
--- Indeks untuk tabel `pengguna`
+-- Indexes for table `pengguna`
 --
 ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
--- Indeks untuk tabel `penilaian`
+-- Indexes for table `penilaian`
 --
 ALTER TABLE `penilaian`
   ADD PRIMARY KEY (`id_penilaian`),
@@ -191,7 +191,7 @@ ALTER TABLE `penilaian`
   ADD KEY `id_pengguna` (`id_pengguna`);
 
 --
--- Indeks untuk tabel `pesanan`
+-- Indexes for table `pesanan`
 --
 ALTER TABLE `pesanan`
   ADD PRIMARY KEY (`id_pesanan`),
@@ -199,65 +199,65 @@ ALTER TABLE `pesanan`
   ADD KEY `id_pengguna` (`id_pengguna`);
 
 --
--- Indeks untuk tabel `produk`
+-- Indexes for table `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `keranjang`
+-- AUTO_INCREMENT for table `keranjang`
 --
 ALTER TABLE `keranjang`
   MODIFY `id_keranjang` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=268;
 
 --
--- AUTO_INCREMENT untuk tabel `pengguna`
+-- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
   MODIFY `id_pengguna` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT untuk tabel `penilaian`
+-- AUTO_INCREMENT for table `penilaian`
 --
 ALTER TABLE `penilaian`
   MODIFY `id_penilaian` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
--- AUTO_INCREMENT untuk tabel `pesanan`
+-- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
   MODIFY `id_pesanan` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=268;
 
 --
--- AUTO_INCREMENT untuk tabel `produk`
+-- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id_produk` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `keranjang`
+-- Constraints for table `keranjang`
 --
 ALTER TABLE `keranjang`
   ADD CONSTRAINT `keranjang_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `keranjang_ibfk_2` FOREIGN KEY (`id_pengguna`) REFERENCES `pengguna` (`id_pengguna`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `penilaian`
+-- Constraints for table `penilaian`
 --
 ALTER TABLE `penilaian`
   ADD CONSTRAINT `penilaian_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `penilaian_ibfk_2` FOREIGN KEY (`id_pengguna`) REFERENCES `pengguna` (`id_pengguna`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `pesanan`
+-- Constraints for table `pesanan`
 --
 ALTER TABLE `pesanan`
   ADD CONSTRAINT `pesanan_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE,
